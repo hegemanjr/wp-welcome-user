@@ -16,6 +16,7 @@
  * Text Domain:       WP_Weclome_User
  */
 class WP_Welcome_User {
+    private $custom_welcome_panel = false;
 
     function __construct() {
         add_action('init', array($this, 'action_init'));
@@ -25,13 +26,33 @@ class WP_Welcome_User {
     public function action_init() {
         register_activation_hook( __FILE__, array($this, 'activate_plugin_name'));
         register_deactivation_hook( __FILE__, array($this, 'deactivate_plugin_name'));
-        remove_action('welcome_panel', 'wp_welcome_panel');
         add_action('wp_login', array($this, 'action_wp_login'));
         add_action('admin_menu', array($this, 'action_admin_menu'));
         add_action('admin_init', array($this, 'action_admin_init'));
         add_action('wp_dashboard_setup', array($this, 'action_wp_dashboard_setup'));
         add_action( 'admin_enqueue_scripts', array($this, 'action_admin_enqueue_scripts'));
-        add_action('welcome_panel', array($this, 'action_welcome_panel'));
+        $this->welcome_panel();
+    }
+
+    function welcome_panel (){
+        $theme_template = locate_template('user-dash-welcome-panel.php');
+        $local_template = file_exists(plugin_dir_path(__FILE__) . 'user-dash-welcome-panel.php') ? plugin_dir_path(__FILE__) . 'user-dash-welcome-panel.php' : false;
+        if($theme_template || $local_template){
+            if($theme_template){
+                $this->custom_welcome_panel = $theme_template;
+            }else{
+                $this->custom_welcome_panel = $local_template;
+            }
+            remove_action('welcome_panel', 'wp_welcome_panel');
+            add_action('welcome_panel', array($this, 'action_welcome_panel'));
+        }
+    }
+
+    // Do Stuff on the welcome_panel action
+    function action_welcome_panel(){
+
+            include $this->custom_welcome_panel;
+
     }
 
     // Do Stuff on the wp_login action
@@ -110,15 +131,7 @@ class WP_Welcome_User {
         }
     }
 
-    // Do Stuff on the welcome_panel action
-    function action_welcome_panel(){
-        $custom_template = locate_template('user-dash-welcome-panel.php');
-        if($custom_template){
-            include $custom_template;
-        }else{
-            include (plugin_dir_path(__FILE__) . 'user-dash-welcome-panel.php');
-        }
-    }
+
 
     // disable default dashboard widgets
     function disable_default_dashboard_widgets() {
