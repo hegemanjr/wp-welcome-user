@@ -1,22 +1,12 @@
 
 <div class="welcome-panel-content">
-            <h2><img src="<?php echo plugin_dir_url(__FILE__);?>/images/Discord_Thonk_500.png" class="welcome-logo" /><?php $current_user = wp_get_current_user();_e( 'Welcome ' . $current_user->display_name . ' to your dashboard!' ); ?></h2>
-<h3><?php _e( 'Week 01 Discord WordPress challenge!' ); ?></h3>
-<p class="about-description">Your challenge for this week: Make a logged in user feel welcome to your site! Customize their experience when they first log in with something personalized.</p>
-<div class="welcome-panel-body">
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus nulla id mi tempus accumsan. Aenean ex metus, pulvinar vel tincidunt eget, placerat sit amet massa. Nulla mattis, quam et euismod pulvinar, dui dui porta quam, non porta neque tellus quis est. Vivamus pharetra neque ac risus laoreet, nec eleifend erat aliquam. Nunc ante tellus, commodo vitae facilisis nec, sollicitudin sodales sapien. Nullam sed turpis posuere, ornare mi sit amet, elementum massa. Etiam sit amet sollicitudin enim.
-    </p>
-    <p>
-        Fusce id purus facilisis, fringilla dolor vitae, malesuada libero. Mauris dignissim est id euismod pulvinar. Suspendisse gravida dignissim enim in mollis. Donec tempus pharetra mauris vel dapibus. Proin dictum nisl vel nisl consectetur ultricies. Donec tincidunt facilisis gravida. Vivamus consectetur erat vitae dui vestibulum, accumsan elementum nulla dapibus. Praesent volutpat erat ac arcu pretium vehicula. Nulla interdum pharetra efficitur. Vivamus accumsan enim venenatis sagittis suscipit. Quisque interdum vel lectus vel laoreet. Proin viverra porttitor convallis. Aliquam erat volutpat.
-    </p>
-    <p>
-        Nunc interdum urna id leo lobortis consequat. Quisque viverra cursus ex quis venenatis. Fusce tristique nunc tortor, vitae eleifend sem elementum in. Integer ut euismod nunc. Vestibulum cursus lorem a ultricies consectetur. Integer rutrum dui dictum dolor varius sollicitudin. In est dui, vulputate in sapien eget, rutrum molestie ligula. Duis ultrices, magna in iaculis pretium, sem neque luctus risus, id aliquam mauris sapien a erat.
-    </p>
-    <p>
-        Fusce fermentum, dui ac egestas blandit, neque libero sollicitudin libero, in dignissim mi lorem non lectus. Nulla sit amet lorem risus. Aliquam suscipit quam ligula, vitae tincidunt massa dictum eu. Nam enim nulla, congue ac sem nec, pharetra feugiat metus. Pellentesque non vehicula nisi. Donec dignissim ipsum in lobortis tempus. Integer vulputate elit sollicitudin, pulvinar ligula ut, tincidunt quam.
-    </p>
-</div>
+    <a href="<?php echo get_site_url();?>"><img src="<?php echo plugin_dir_url(__FILE__);?>/images/608Software.png" class="welcome-logo" /></a>
+<!--    <h2>--><?php //$current_user = wp_get_current_user();_e( 'Welcome, ' . $current_user->display_name . ', to your dashboard!' ); ?><!--</h2>-->
+    <h2><?php $current_user = wp_get_current_user();_e( 'Welcome, John, to your dashboard!' ); ?></h2>
+    <p class="about-description">We’ve assembled some links to get you started:</p>
+    <div class="welcome-panel-body">
+
+    </div>
 <div class="welcome-panel-column-container">
     <div class="welcome-panel-column">
         <?php if ( current_user_can( 'customize' ) ) : ?>
