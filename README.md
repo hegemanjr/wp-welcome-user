@@ -1,10 +1,8 @@
 # Week-01 WP Welcome User
 
-### Discord WordPress Weekly Challenge
 ![Screenshot](https://raw.githubusercontent.com/hegemanjr/wp-welcome-user/master/screenshot.png)
 
 Make a logged in user feel welcome to your site! Customize their experience when they first log in with something personalized.
-
 
 #### Description
 This plugin will remove all of the default dashboard widgets and the default welcome screen, then allow you to add your own.
