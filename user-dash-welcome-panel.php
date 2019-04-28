@@ -1,8 +1,7 @@
 
 <div class="welcome-panel-content">
     <a href="<?php echo get_site_url();?>"><img src="<?php echo plugin_dir_url(__FILE__);?>/images/608Software.png" class="welcome-logo" /></a>
-<!--    <h2>--><?php //$current_user = wp_get_current_user();_e( 'Welcome, ' . $current_user->display_name . ', to your dashboard!' ); ?><!--</h2>-->
-    <h2><?php $current_user = wp_get_current_user();_e( 'Welcome, John, to your dashboard!' ); ?></h2>
+    <h2><?php $current_user = wp_get_current_user();_e( 'Welcome, ' . $current_user->display_name . ', to your dashboard!' ); ?></h2>
     <p class="about-description">We’ve assembled some links to get you started:</p>
     <div class="welcome-panel-body">
 
