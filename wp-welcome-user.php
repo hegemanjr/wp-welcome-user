@@ -1,6 +1,6 @@
 <?php
 /**
- * @link              https://hegeman.me
+ * @link              https://608.software
  * @since             1.0.0
  * @package           WP_Weclome_User
  *
@@ -9,8 +9,8 @@
  * Plugin URI:        https://608.software
  * Description:       Make a logged in user feel welcome to your site! Customize their experience when they first log in with something personalized. Remove default welcome panel and widgets from user dashboard. Add custom welcome panel
  * Version:           1.0.0
- * Author:            Jeff Hegeman
- * Author URI:        https://hegeman.me
+ * Author:            [608 Software]
+ * Author URI:        https://608.software
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       WP_Weclome_User
